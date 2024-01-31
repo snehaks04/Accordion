@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+ 
+   h3{
+    font-size: 2rem;
+    color: darkgoldenrod;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   }
+        .fqa{
+          width: fit-content;
+           
+            margin-top: 4rem;
+            margin-inline:auto;
+        }
+        .q{
+            display: flex;
+            font-size: 1.2rem;
+            justify-content: space-between;
+            
+        }
+
+        .box{
+            background-color: rgb(208, 227, 34);
+            margin-top: 1rem;
+            padding: 1rem;
+            width:30rem;
+            box-shadow: 0 .2rem 4px rgb(0 0 0 /.5);
+        }
+
+
+        .ans{
+            display: none;
+        }
+        .arrows{
+            margin-block: auto;
+            display: flex;
+            flex-direction: column;
+            margin-right: 1rem;
+        }
+        .up{
+            display: none;
+        }
+        .down{
+            display: block;
+        }
+        
+     .show{
+        display: block;
+       
+     }
+    
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h3>General Questions</h3>
+        <div class="fqa">
+            <div class="box">
+                <div class="q"> <p>What is HTTP ?</p>
+                    <div class="arrows">
+              <img class="btn down" src="https://www.svgrepo.com/show/80156/down-arrow.svg" width="12rem" alt="http-down">  
+              <img class="btn up" src="https://www.svgrepo.com/show/93813/up-arrow.svg" width="12rem" alt="http-up">  
+            </div>
+        </div>
+            <div class="ans">
+                <p>Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes. HTTP follows a classical client-server model, with a client opening a connection to make a request, then waiting until it receives a response. HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests.</p>
+            </div>
+            </div>
+            <div class="box">
+                <div class="q"> <p>What is HTTP Cookie ?</p>
+                    <div class="arrows">
+              <img class="btn down" src="https://www.svgrepo.com/show/80156/down-arrow.svg"  width="12rem" alt="cookie-down">
+              <img class="btn up"  src="https://www.svgrepo.com/show/93813/up-arrow.svg" width="12rem" alt="cookie-up">   
+            </div>
+        </div>
+            <div class="ans">
+                <p>An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to a user's web browser. The browser may store the cookie and send it back to the same server with later requests. Typically, an HTTP cookie is used to tell if two requests come from the same browser—keeping a user logged in, for example. It remembers stateful information for the stateless HTTP protocol</p>
+            </div>
+            </div>
+            <div class="box">
+                <div class="q"> <p>CORS ?</p>
+                <div class="arrows">
+              <img   class="btn down" src="https://www.svgrepo.com/show/80156/down-arrow.svg" width="12rem" alt="cors-down">  
+              <img class="btn up" src="https://www.svgrepo.com/show/93813/up-arrow.svg" width="12rem" alt="cors-up"> 
+            </div>
+        </div>
+            <div class="ans">
+                <p>Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script>
+
+const q=document.querySelectorAll(".q")
+const btn=document.querySelectorAll(".btn");
+const up=document.querySelectorAll(".up");
+const down=document.querySelectorAll(".down");
+const ans=document.querySelectorAll(".ans");
+
+for(let i=0;i<q.length;i++){
+q[i].addEventListener("click",()=>{
+    const b= ans[i].classList.toggle("show")
+   
+   if(b){
+    q[i].style.borderBottom="1px solid rgb(0 0 0 /.5)"
+    down[i].style.display="none"
+    up[i].style.display="block"
+   } else{
+    q[i].style.borderBottom="none"
+    down[i].style.display="block"
+    up[i].style.display="none"
+   }
+})
+
+
+}
+
+
+    </script>
+</body>
+</html>
